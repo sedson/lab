@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+:root {
+  --background: #ddd;
+  --text: #333;
+  --border: rgb(from var(--text) r g b / 0.33);
+  --accent: var(--sky);
+  --select: rgb(from var(--accent) r g b / 0.33);
+  font-size: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #454545;
+    --text: var(--sand);
+    --accent: var(--raspberry);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text);
+}
+
+.tools {
+  display: flex;
+  height: 3rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+}
+
+.tools > * {
+  margin-right: 1em;
+}
+
+.work-area {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+  background: var(--accent);
+  padding: 0.2em 1em;
+  border-radius: 2px;
+}
+
+.track-v {
+  width: 20px;
+  height: 300px;
+  position: fixed;
+  border: 1px solid var(--border);
+  background: var(--background);
+}
+
+.track-h {
+  width: 300px;
+  height: 20px;
+  position: fixed;
+  border: 1px solid var(--border);
+  background: var(--background);
+}
+
+#zoom-level {
+  right: 20px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#rotate {
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+input {
+  background: none;
+  color: currentcolor;
+  border: 1px solid currentcolor;
+  height: 1.5rem;
+  font-family: unset;
+  padding: 0.75em;
+  border: 1px solid var(--border);
+}
+input:focus {
+  outline: none;
+  background: var(--select);
+}
+
+input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.ch10 {
+  width: 10ch;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+canvas {
+  box-shadow: 0px 0px 10px #0008;
+  max-height: 95%;
+  max-width: 95%;
+  background-color: #444;
+  background-image:  conic-gradient(
+    transparent 90deg,
+    #0002 90deg 180deg,
+    transparent 180deg 270deg,
+    #0002 270deg
+  );
+  background-size: 20px 20px;
+}

@@ -1,0 +1,136 @@
+@import url(./colors.css);
+
+@font-face {
+  font-family: Atlas;
+  src: url(/fonts/AtlasTypewriter-Regular.woff2);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  font-weight: normal;
+  line-height: 1.2em;
+  font-size: 1rem;
+}
+
+:root {
+  font-size: 13px;
+  
+  --system: -system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --sans: var(--system), sans-serif;
+  --mono: Atlas, var(--system);
+
+  --default-page-color: var(--white);
+  --default-text-color: var(--black);
+  
+  --accent-color: var(--lime);
+  --link-color: var(--blue);
+
+  --page-color: var(--default-page-color);
+  --text-color: var(--default-text-color);
+  --body-pad: 2rem;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --default-page-color: var(--black);
+    --default-text-color: var(--white);
+    --link-color: var(--lime);
+    --accent-color: var(--vert);
+  }
+} */
+
+::selection {
+  background-color: var(--text-color);
+  color: var(--page-color);
+  opacity: 1 !important;
+}
+
+body {
+  font-family: var(--mono);
+  text-rendering: optimizeLegibility;
+  background-color: var(--page-color);
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--body-pad);
+}
+
+a {
+  color: var(--link-color);
+}
+
+ul, ol {
+  list-style: none;
+  padding-top: 1rem;
+
+  
+  li {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  li::before {
+    margin-left: -2rem;
+    width: 2rem;
+    display: inline-block;
+  }
+}
+
+ul {
+  li::before { 
+    content: "→";
+    color: var(--link-color);
+  }
+}
+.fade {
+  color: rgb(from var(--text-color) r g b / 0.5);
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid rgb(from var(--text-color) r g b / 0.25);
+}
+
+.card {
+  border: 1px solid rgb(from var(--text-color) r g b / 0.25);
+  width: calc(100% * (1/ 3) - 1rem);
+  padding: 1rem;
+  margin: 0.5rem;
+  padding-top: 2rem;
+  background-color: rgb(from var(--text-color) r g b / 0.03);
+  position: relative;
+  & * {
+    margin: 0.3em 0;
+  }
+  .top {
+    position: absolute;
+    top: 0;
+    background-color: yellow;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
+    padding: 0.25rem;
+    background-color: rgb( from var(--text-color) r g b / 0.1);
+    color: rgb( from var(--text-color) r g b / 0.75);
+  }
+}
+
+.flex-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: calc(100% * (1 / 2) - 1rem);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    width: 100%;
+  }
+}
+

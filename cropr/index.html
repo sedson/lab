@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cropr</title>
+  <script type="text/javascript" src="./script.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+  <div class="tools">
+    <div>
+      <label for="canvas-width">w</label>
+      <input type="number" class="ch10" id="canvas-width">
+    </div>
+    <div>
+      <label for="canvas-height">h</label>
+      <input type="number" class="ch10" id="canvas-height">
+    </div>
+    <div> 
+      <label for="open" class="btn">Open Image</label>
+      <input type="file" id="open"/>
+    </div>
+    <div> 
+      <div id="save" class="btn">Save Image</div>
+    </div>
+    <div>
+      <label for="canvas-height">prefix</label>
+      <input type="text" class="" id="prefix">
+    </div>
+  </div>
+  <div class="work-area">
+    <canvas width="800" height="800"></canvas>
+  </div>
+  <div id="zoom-level" class="track-v"></div>
+  <div id="rotate" class="track-h"></div>
+</body>
+</html>
